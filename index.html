@@ -1,0 +1,60 @@
+<html>
+
+<title>Div Blaster</title>
+
+<!-- JS -->
+<script src='scripts/jquery.min.js'></script>
+<script src='scripts/page.js'></script>
+<script src='scripts/gup.js'></script>
+
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="style/style.css">
+
+<!-- HTML -->
+<body>
+  <audio id="intro-audio" src="audio/intro.mp3"></audio>
+  <div class='outer-container'>
+    <div class='game-window'>
+      <div id='enterprise' class='ship'>
+        <img class='avatar' id='shipAvatar' src='img/fighter.png' height='50px'/> <!--ship img: src='http://i.stack.imgur.com/rsH6n.png'-->
+      </div>
+      <div id='explodeImg' class="imgExpl" style="visibility": hidden>
+        <img class='explode' id='explodeImg' src='img/explosion.png' height='50px'/>
+      </div>
+      <div class='splash' id='splash-window' style="text-align: center">
+        <h1>Div Blaster</h3>
+        <h2>Created by Neeral Desai</h2>
+        <h3>Space: Fire a Rocket</h1>
+        <h3>Arrow Keys(&larr;&uarr;&rarr;&darr;): Move the Ship</h1>
+        <button type="button" value="Start" onclick="start_game()" id="start-div">Start Div Blaster</button>
+      </div>
+      <div class='game-over' id="gameOver" style="visibility": hidden>
+        <h1>GAME OVER</h1>
+        <h2 id='endScoreBox'>Your Score:</h2>
+        <button type="button" value="Go Back" onclick="go_back()" id="go-back">Go Back</button>
+      </div>
+    </div>
+
+    <div class='status-window' style='text-align: center'>
+      <h3>Welcome!</h3>
+      <hr>
+      <br>
+      <p>score:</p>
+      <h1 id='score-box'>0</h1>
+      <p>Accuracy:</p>
+      <h1 id='accuracy-box'>0%</h1>
+      <button type="button" value="button" onclick="open_settings()" id="open-settings">Open Setting Panel</button>
+      <div class='settings' id='settings-panel' style='text-align: center'; style="visibility": hidden>
+        <p>Number of Asteroids per Second</p>
+        <input type="text" id="spawnRate" title="Min. 0.2 Max. 4" style="color:#888;" 
+          value="Min. 0.2 Max. 4" onfocus="inputFocus(this)" onblur="inputBlur(this)"/>
+        <p>Number of lives</p>
+        <input type='text' id='settingsLives' onblur='inputBlurLives(this)' />
+        <p>Mute Voice <input type="checkbox" id='muteVoiceCheck' name="mute-voice" /></p>
+        <button type="button" value="button" onclick="update_settings()" id="update-settings">Update</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
